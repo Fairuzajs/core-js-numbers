@@ -87,8 +87,14 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  let result;
+  if (b === 0) {
+    result = 0;
+  } else {
+    result = -b / a;
+  }
+  return result;
 }
 
 /**
@@ -208,14 +214,8 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(n) {
-  let result;
-  if (n === 2 || n === 3) result = true;
-  if (n <= 1 || n % 2 === 0 || n % 3 === 0) result = false;
-  for (let i = 5; i * i <= n; i += 6) {
-    if (n % i === 0 || n % (i + 2) === 0) result = false;
-  }
-  return result;
+function isPrime(/* n */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -431,8 +431,8 @@ function getNumberValue(number) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(number) {
-  return Boolean(number);
+function isNumber(/* number */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -479,7 +479,7 @@ function getFloatOnString(str) {
  * '10', 8              => 1
  */
 function getIntegerOnString(str, base) {
-  return parseInt(str, base);
+  return Number.parseInt(str, base);
 }
 
 /**
@@ -567,9 +567,8 @@ function getIntegerPartNumber(number) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(x1, x2, x3) {
-  const sum = [x1, x2, x3].reduce((partialSum, a) => partialSum + a, 0);
-  return sum;
+function getSumOfNumbers(/* x1, x2, x3 */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -600,8 +599,8 @@ function getMaxNumber(firstNumber, secondNumber) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(/* min, max */) {
-  throw new Error('Not implemented');
+function getRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 /**
@@ -615,7 +614,7 @@ function getRandomInteger(/* min, max */) {
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  return Math.sqrt(a * a + b * b);
+  return Math.hypot(a, b);
 }
 
 /**
