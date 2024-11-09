@@ -576,8 +576,9 @@ function getIntegerPartNumber(number) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
+function getSumOfNumbers(x1, x2, x3) {
+  const sum = +x1 + +x2 + +x3;
+  return sum.toFixed(2);
 }
 
 /**
@@ -639,8 +640,10 @@ function getHypotenuse(a, b) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  return Math.abs(number) % 2 === 0
+    ? Math.abs(number) / 2
+    : (Math.abs(number) - 1) / 2 + 1;
 }
 
 module.exports = {
