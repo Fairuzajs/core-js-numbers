@@ -440,8 +440,14 @@ function getNumberValue(number) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(/* number */) {
-  throw new Error('Not implemented');
+function isNumber(number) {
+  let numb = false;
+  if (typeof number === 'number') {
+    if (!Number.isNaN(number) && Number.isFinite(number)) {
+      numb = true;
+    }
+  }
+  return numb;
 }
 
 /**
